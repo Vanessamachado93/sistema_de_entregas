@@ -1,24 +1,30 @@
-# README
+<h1>SISTEMA DE ENTREGAS - TREINADEV TURMA: 08<h1>
+Sobre o projeto:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h2>Aplicação tem como objetivo gerenciar meios de transporte disponíveis para e-commerces.</h2>
 
-Things you may want to cover:
+- Cadastrar transportadoras, seus veículos, tabelas de preço e prazos;
+- Criar ordens de serviço, pesquisar preços e prazos praticados pelas
+  transportadoras conforme ordem e vincular a uma transportadora;
+- Aceitar ordens de serviço atribuídas à transportadora e atualizar periodicamente situação da entrega;
+- Consultar qual status da entrega realizada.
 
-* Ruby version
+Configuração base do projeto:
 
-* System dependencies
+- Rails 7.0.3
+- Ruby 3.0.3
 
-* Configuration
+Configuração de testes:
 
-* Database creation
+- Rspec-rails 5.1.2
+- gem "capybara"
 
-* Database initialization
+Como iniciar o projeto:
 
-* How to run the test suite
+1. Clone o projeto para sua máquina, e dentro da pasta do projeto, rode o comando bin/setup em seu terminal.
+2. Mude de diretório para a pasta principal do repositório.
+3. Você pode utilizar o comando rails s para ver a aplicação funcionando localmente no endereço http://localhost:3000.
 
-* Services (job queues, cache servers, search engines, etc.)
+Como executar os testes:
 
-* Deployment instructions
-
-* ...
+1.  Execute o comando `rspec` no terminal.
