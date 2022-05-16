@@ -28,3 +28,7 @@ Como iniciar o projeto:
 Como executar os testes:
 
 1.  Execute o comando `rspec` no terminal.
+
+<h2> Organização do projeto.</h2>
+
+- [Github projects](https://github.com/users/Vanessamachado93/projects/2)
