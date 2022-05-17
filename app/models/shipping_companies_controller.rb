@@ -1,0 +1,2 @@
+class ShippingCompaniesController < ApplicationRecord
+end
