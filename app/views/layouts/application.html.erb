@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DeliverysystemApp</title>
+    <title>Sistema de entregas</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body>
-    <%= yield %>
+    <body>
+      <header>
+        <h1>Sistema de entregas</h1>
+          <nav>
+            <% if user_signed_in? %>
+              <%= link_to "Sair", root_path %>
+              <%= current_user.email %>
+            <% else %>
+              <%= link_to "Entrar", new_user_session_path %>
+            <% end %>
+          </nav>
+      <header>
+    <main>
+          <div>
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+          </div>
+        <%= yield %>
+     </main>
   </body>
 </html>

@@ -13,7 +13,7 @@ RSpec.describe ShippingCompany, type: :model do
         company.valid?
 
         expect(company.valid?).to eq false
-        debugger
+
         expect(company.errors.full_messages).to include("Nome fantasia não pode ficar em branco")
         expect(company.errors.full_messages).to include("Razão social não pode ficar em branco")
         expect(company.errors.full_messages).to include("CNPJ não pode ficar em branco")
