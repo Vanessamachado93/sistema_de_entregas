@@ -13,14 +13,14 @@
         <h1>Sistema de entregas</h1>
           <nav>
             <% if user_signed_in? %>
-              <%= link_to "Sair", root_path %>
-              <%= current_user.email %>
+              <%= current_user.email %> 
+              <%= button_to "Sair", destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to "Entrar", new_user_session_path %>
             <% end %>
           </nav>
       <header>
-    <main>
+     <main>
           <div>
               <p class="notice"><%= notice %></p>
               <p class="alert"><%= alert %></p>
