@@ -7,7 +7,7 @@ describe "User authenticates" do
     visit root_path
     click_on "Entrar"
     within("form") do
-      fill_in "E-mail", with: "email@example.com"
+      fill_in "Email", with: "email@example.com"
       fill_in "Senha", with: "password"
       click_on "Entrar"
     end
@@ -25,7 +25,7 @@ describe "User authenticates" do
 
     visit root_path
     click_on "Entrar"
-    fill_in "E-mail", with: "email@example.com"
+    fill_in "Email", with: "email@example.com"
     fill_in "Senha", with: "password"
     within("form") do
       click_on "Entrar"
