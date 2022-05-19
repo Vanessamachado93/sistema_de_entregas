@@ -1,0 +1,18 @@
+<section>
+  <h1>TRANSPORTADORAS CADASTRADAS</h1>
+    <div>
+      <h3>Transportadora <%= @shipping_company.brand_name %></h3>
+      <dl>
+        <dt> Razão Social:</dt><dd><%= @shipping_company.corporate_name %></dd>
+        <dt> CNPJ:</dt>
+        <dd><%= @shipping_company.registration_number %></dd>
+        <dt> Endereço:</dt>
+        <dd><%= @shipping_company.address %></dd>
+        <dt> Localidade:</dt>
+        <dd><%= @shipping_company.city %> - <%= @shipping_company.state %></dd>
+      </dl>
+    </div>
+</section>
+<div>
+  <%= link_to "VOLTAR", shipping_companies_path %>
+</div>

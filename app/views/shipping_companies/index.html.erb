@@ -1,0 +1,24 @@
+<div>
+  <h1>Transportadoras</h1>
+</div>
+<div>
+   <strong><%= link_to "Adicionar transportadora", new_shipping_company_path %></strong>
+</div>
+
+  <div>
+    <% if @shipping_companies.any? %>
+      <% @shipping_companies.each do |company| %>
+        <article>
+          <h3><%= link_to(company.brand_name, company) %></h3>
+          <dl>
+            <dt>CNPJ:</dt>
+            <dd><%= company.registration_number %></dd>
+            <dt>Localidade:</dt>
+            <dd><%= company.city %> - <%= company.state %></dd>
+          </dl>
+        </article>
+      <% end %>
+    <% else %>
+      <p>Não existem transportadoras cadastradas</p>
+    <% end %>
+  </div>

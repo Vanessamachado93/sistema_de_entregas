@@ -2,16 +2,17 @@ require "rails_helper"
 
 describe "User authenticates" do
   it "successfully" do
+    #Arrange
     User.create!(email: "email@example.com", password: "password")
-
+    #Act
     visit root_path
     click_on "Entrar"
     within("form") do
-      fill_in "Email", with: "email@example.com"
+      fill_in "E-mail", with: "email@example.com"
       fill_in "Senha", with: "password"
       click_on "Entrar"
     end
-
+    #Assert
     expect(page).to have_content "Login efetuado com sucesso"
     within("nav") do
       expect(page).not_to have_link "Entrar"
@@ -19,13 +20,14 @@ describe "User authenticates" do
       expect(page).to have_content "email@example.com"
     end
   end
+
   # Espera ver uma mensagem de sucesso => Usúario autenticado com sucesso
   it "and logout" do
     User.create!(email: "email@example.com", password: "password")
 
     visit root_path
     click_on "Entrar"
-    fill_in "Email", with: "email@example.com"
+    fill_in "E-mail", with: "email@example.com"
     fill_in "Senha", with: "password"
     within("form") do
       click_on "Entrar"

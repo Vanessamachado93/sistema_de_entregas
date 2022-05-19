@@ -1,2 +1,0 @@
-class ShippingCompaniesController < ApplicationRecord
-end

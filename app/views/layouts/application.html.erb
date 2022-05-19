@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sistema de entregas</title>
+    <title>DeliverySystem</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,21 +10,26 @@
   </head>
     <body>
       <header>
-        <h1>Sistema de entregas</h1>
-          <nav>
+        <h1>SISTEMA DE ENTREGAS</h1>
+          <nav class="nav center">
             <% if user_signed_in? %>
               <%= current_user.email %> 
               <%= button_to "Sair", destroy_user_session_path, method: :delete %>
             <% else %>
-              <%= link_to "Entrar", new_user_session_path %>
+              <strong><%= link_to "Entrar", new_user_session_path %></strong>  | 
             <% end %>
+          <p><strong><%= link_to "Início", root_path %></strong><p>  |
+          <strong><%= link_to "Transportadoras", shipping_companies_path %></strong>  | 
           </nav>
       <header>
-     <main>
-          <div>
-              <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p>
+      <% if notice %>
+          <div class="alert alert-success" role="alert"><%= notice %></div>
+       <% end %>
+       <% if alert %>
+          <div class="alert alert-danger" role="alert"><%= alert %></div>
+       <% end %>
           </div>
+     <main>
         <%= yield %>
      </main>
   </body>

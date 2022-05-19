@@ -5,10 +5,5 @@ pt-BR:
     attributes:
       User:
         name: 'Nome'
-        email: 'E-mail'
-  devise:
-    shared:
-      links:
-        log_in: 'Entrar'
-        sign_up: 'Criar uma conta'
-        forgot_your_password: 'Esqueceu sua senha?'
+        email: 'e-mail'
+        password: 'Senha'

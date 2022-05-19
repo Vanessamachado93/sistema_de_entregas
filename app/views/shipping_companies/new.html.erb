@@ -1,0 +1,58 @@
+<div>
+  <h1>Cadastrar transportadora</h1>
+</div>
+<div id='error_msgs'>
+<% if (@shipping_company.errors.any?) %>
+    <p>Verifique os erros abaixo:</p>
+    <ul>
+        <% @shipping_company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+ </ul>
+<div>
+<% end %>
+
+<%= form_with model: @shipping_company do |f| %>
+  <div>
+    <p><strong><%= f.label :brand_name, "Nome fantasia" %></strong>
+    <%= f.text_field :brand_name %>
+  </div>
+
+  <div>
+    <p><strong><%= f.label :corporate_name, "Razão social" %></strong>
+    <%= f.text_field :corporate_name %>
+  </div>
+
+  <div>
+    <p><strong><%= f.label :registration_number, "CNPJ" %></strong>
+    <%= f.number_field :registration_number %>
+  </div>
+
+  <div>
+    <p><strong><%= f.label :email_domain, "Domínio de e-mail" %></strong>
+    <%= f.text_field :email_domain %> 
+  </div>
+
+  <div>
+    <p><strong><%= f.label :address, "Endereço" %></strong>
+    <%= f.text_field :address %>
+  </div>
+
+  <div>
+    <p><strong><%= f.label :city, "Cidade" %></strong>
+    <%= f.text_field :city %>
+  </div>
+  <div>
+    <p><strong><%= f.label :state, "Estado" %></strong>
+    <%= f.text_field :state %>
+  </div>
+
+  <div>
+    <%= f.submit "Salvar" %>
+  </div>
+<% end %>
+
+
+<div>
+  <%= link_to "Voltar", shipping_companies_path %>
+</div>
