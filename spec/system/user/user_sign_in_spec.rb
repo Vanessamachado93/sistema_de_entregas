@@ -3,7 +3,12 @@ require "rails_helper"
 describe "User authenticates" do
   it "successfully" do
     #Arrange
-    User.create!(email: "email@example.com", password: "password")
+    company = ShippingCompany.create!(corporate_name: "Transportes Rapidão LTDA",
+                                      brand_name: "R rapidão", registration_number: "34567987654567",
+                                      email_domain: "rapidao.com.br", address: "Av João Pedro, 400",
+                                      city: "Porto Alegre", state: "RS")
+
+    User.create!(email: "email@example.com", password: "password", shipping_company: company)
     #Act
     visit root_path
     click_on "Entrar"
@@ -16,6 +21,9 @@ describe "User authenticates" do
     expect(page).to have_content "Login efetuado com sucesso"
     within("nav") do
       expect(page).not_to have_link "Entrar"
+      expect(page).not_to have_link "Transportadoras"
+      expect(page).not_to have_link "Area Administrativa"
+      expect(page).to have_link "Minha transportadora"
       expect(page).to have_button "Sair"
       expect(page).to have_content "email@example.com"
     end
@@ -23,7 +31,12 @@ describe "User authenticates" do
 
   # Espera ver uma mensagem de sucesso => Usúario autenticado com sucesso
   it "and logout" do
-    User.create!(email: "email@example.com", password: "password")
+    company = ShippingCompany.create!(corporate_name: "Transportes Rapidão LTDA",
+                                      brand_name: "R rapidão", registration_number: "34567987654567",
+                                      email_domain: "rapidao.com.br", address: "Av João Pedro, 400",
+                                      city: "Porto Alegre", state: "RS")
+
+    User.create!(email: "email@example.com", password: "password", shipping_company: company)
 
     visit root_path
     click_on "Entrar"

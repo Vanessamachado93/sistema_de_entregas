@@ -1,7 +1,10 @@
 require "rails_helper"
 
-describe "Visitor registers carrier" do
+describe "Admin registers carrier" do
   it "from the carrier's home screen" do
+    admin = Admin.create!(email: "email@example.com", password: "password")
+
+    login_as admin, scope: :admin
     visit root_path
     click_on "Transportadoras"
     click_on "Adicionar transportadora"
@@ -19,8 +22,11 @@ describe "Visitor registers carrier" do
   end
 
   it "with incomplete or invalid data" do
+    admin = Admin.create!(email: "email@example.com", password: "password")
+
+    login_as admin, scope: :admin
     visit root_path
-    click_on "Transportadora"
+    click_on "Transportadoras"
     click_on "Adicionar transportadora"
     fill_in "Razão social", with: ""
     fill_in "Nome fantasia", with: ""
@@ -36,4 +42,21 @@ describe "Visitor registers carrier" do
     expect(page).to have_content " CNPJ não é válido"
     expect(page).to have_content " Cidade não pode ficar em branco"
   end
+
+  it "de estar logado para criar uma transportadora" do
+    visit "/shipping_companies/new"
+
+    expect(page).to have_content "Para continuar, faça login ou registre-se."
+  end
+
+  # it "deve estar logado para ver os detalahes de uma transpotadora" do
+  #   company = ShippingCompany.create!(corporate_name: "Transportes Rapidão LTDA",
+  #                                     brand_name: "R rapidão", registration_number: "34567987654567",
+  #                                     email_domain: "rapidao.com.br", address: "Av João Pedro, 400",
+  #                                     city: "Porto Alegre", state: "RS")
+
+  #   visit "shipping_companies/#{company.id}"
+
+  #   expect(page).to have_content "Para continuar, faça login ou registre-se."
+  # end
 end

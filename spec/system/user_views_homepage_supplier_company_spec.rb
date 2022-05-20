@@ -13,7 +13,8 @@ describe "Visiting the home page" do
     visit root_path
 
     within("nav") do
-      expect(page).to have_link "Início"
+      expect(page).to have_link "Entrar"
+      expect(page).to have_link "Area Administrativa"
     end
   end
 end
