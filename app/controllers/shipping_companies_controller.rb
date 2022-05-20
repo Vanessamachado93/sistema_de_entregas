@@ -1,4 +1,7 @@
 class ShippingCompaniesController < ApplicationController
+  before_action :authenticate_admin!, only: %i[new]
+  before_action :authenticate_admin_or_user!, only: %i[show]
+
   def index
     @shipping_companies = ShippingCompany.all
   end
@@ -25,7 +28,8 @@ class ShippingCompaniesController < ApplicationController
   private
 
   def shipping_company_params
-    params.require(:shipping_company).permit(:brand_name, :corporate_name, :registration_number, :email_domain,
+    params.require(:shipping_company).permit(:brand_name, :corporate_name,
+                                             :registration_number, :email_domain,
                                              :address, :city, :state)
   end
 end
