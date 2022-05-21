@@ -5,4 +5,5 @@ class ShippingCompany < ApplicationRecord
   validates :email_domain, format: { with: /\A[a-z0-9]+\.[a-z]+(.[a-z]+)?\z/i }
 
   has_many :users
+  has_many :vehicles
 end

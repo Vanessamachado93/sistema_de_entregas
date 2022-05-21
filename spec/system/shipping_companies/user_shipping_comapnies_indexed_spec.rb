@@ -2,8 +2,10 @@ require "rails_helper"
 
 describe "Admin accesses main page of shipping companies" do
   it "and see registered shipping companies" do
-    company = ShippingCompany.create!(corporate_name: "Transportadora R rapidão LTDA", brand_name: "R Rapião",
-                                      registration_number: "34567987654567", email_domain: "saomiguel.com.br",
+    company = ShippingCompany.create!(corporate_name: "Transportadora R rapidão LTDA",
+                                      brand_name: "R Rapião",
+                                      registration_number: "34567987654567",
+                                      email_domain: "saomiguel.com.br",
                                       address: "Av do João, 1000", city: "Porto Alegre",
                                       state: "RS")
 

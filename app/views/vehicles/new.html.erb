@@ -1,0 +1,35 @@
+<h1>Cadastro de veículo</h1>
+
+<ul>
+  <% if @vehicle.errors.any? %>
+    <% @vehicle.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= form_with model: [:shipping_company, @vehicle] do |f| %>
+  <div>
+    <%= f.label :license_plate, "Placa" %>
+    <%= f.text_field :license_plate %>
+  </div>
+  <div>
+    <%= f.label :brand, "Marca" %>
+    <%= f.text_field :brand %>
+  </div>
+  <div>
+    <%= f.label :code_model, "Modelo" %>
+    <%= f.text_field :code_model %>
+  </div>
+  <div>
+    <%= f.label :manufact_year, "Ano de fabricação" %>
+    <%= f.number_field :manufact_year %>
+  </div>
+  <div>
+    <%= f.label :capacity, "Capacidade" %>
+    <%= f.number_field :capacity %>
+  </div>
+  <div>
+    <%= f.submit "Cadastrar" %>
+  </div>
+<% end %>

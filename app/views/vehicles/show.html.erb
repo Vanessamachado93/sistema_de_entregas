@@ -1,0 +1,10 @@
+<h1><%= @vehicle.brand %> <%= @vehicle.code_model %></h1>
+    <div>
+        <strong>Placa: <%= @vehicle.license_plate %></strong>
+        <strong>Marca: <%= @vehicle.brand %> </strong>
+        <strong>Ano de fabricação: </strong><%= @vehicle.manufact_year %>
+        <strong>Capacidade: </strong><%= @vehicle.capacity %>g 
+    </div>
+  <div>
+    <%= link_to "Voltar" %>
+</div>

@@ -5,12 +5,11 @@ company = ShippingCompany.create!(corporate_name: "Transportes Rapidão LTDA",
 
 User.create!(email: "rapidao@rapidao.com.br", password: "123456", shipping_company: company)
 
-Admin.create!(email: "admin@sistemadefrete.com.br.", password: "123456")
-
+Admin.create!(email: "admin@sistemadefrete.com.br", password: "123456")
 
 expressoa = ShippingCompany.create!(corporate_name: "Expresso B LTDA",
-                                  brand_name: "Expresso B ", registration_number: "23344567893455",
-                                  email_domain: "expressoa.com.br", address: "Av João Paulo, 100",
-                                  city: "Porto Alegre", state: "RS")
+                                    brand_name: "Expresso B ", registration_number: "23344567893455",
+                                    email_domain: "expressoa.com.br", address: "Av João Paulo, 100",
+                                    city: "Porto Alegre", state: "RS")
 
-User.create!(email: "expressoB@expressoa.com.br, password: "234567", shipping_company: expressoa)
+User.create!(email: "expressoB@expressoa.com.br", password: "234567", shipping_company: expressoa)
