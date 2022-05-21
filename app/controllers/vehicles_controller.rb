@@ -9,6 +9,9 @@ class VehiclesController < ApplicationController
     @vehicle = @shipping_company.vehicles.new(vehicle_params)
     if @vehicle.save
       redirect_to [@shipping_company, @vehicle], notice: "Veículo cadastrado com sucesso"
+    else
+      flash.now[:alert] = "Não foi possível cadastrar o veículo."
+      render :new
     end
   end
 
@@ -19,7 +22,9 @@ class VehiclesController < ApplicationController
   private
 
   def vehicle_params
-    params.require(:vehicle).permit(:license_plate, :brand, :code_model, :manufact_year, :capacity)
+    params.require(:vehicle).permit(:license_plate,
+                                    :brand, :code_model,
+                                    :manufact_year, :capacity)
   end
 
   def set_shipping_company

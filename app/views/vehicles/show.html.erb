@@ -1,3 +1,11 @@
+<div>
+    <p>Verifique os erros abaixo:</p>
+    <% if @shipping_company.errors.any? %>
+      <% @shipping_company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    <% end %>
+</div>
 <h1><%= @vehicle.brand %> <%= @vehicle.code_model %></h1>
     <div>
         <strong>Placa: <%= @vehicle.license_plate %></strong>

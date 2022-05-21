@@ -29,7 +29,6 @@ describe "User authenticates" do
     end
   end
 
-  # Espera ver uma mensagem de sucesso => Usúario autenticado com sucesso
   it "and logout" do
     company = ShippingCompany.create!(corporate_name: "Transportes Rapidão LTDA",
                                       brand_name: "R rapidão", registration_number: "34567987654567",
