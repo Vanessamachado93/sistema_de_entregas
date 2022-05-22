@@ -9,9 +9,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
     <body>
-      <header>
+      <header class="container mt-3 text-center">
         <h1>SISTEMA DE ENTREGAS</h1>
-          <nav class="nav center">
+          <nav class="nav text-center">
             <% if user_signed_in? %>
               <%= current_user.email %> 
               <strong><%= link_to "Minha transportadora", shipping_company_path(current_user.shipping_company_id) %></strong>
@@ -30,7 +30,8 @@
               <%= current_admin.email %> 
             <% end %>
           </nav>
-      <header>
+      <header >
+     <main class="container">
       <% if notice %>
           <div class="alert alert-success" role="alert"><%= notice %></div>
        <% end %>
@@ -38,7 +39,6 @@
           <div class="alert alert-danger" role="alert"><%= alert %></div>
        <% end %>
           </div>
-     <main>
         <%= yield %>
      </main>
   </body>

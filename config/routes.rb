@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root "home#index"
   resources :shipping_companies, only: [:index, :new, :create, :show] do
     resources :vehicles, only: [:new, :create, :show]
+    resources :price, only: %i[new create]
   end
 end

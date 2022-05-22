@@ -1,5 +1,4 @@
 <section>
-  <h1>TRANSPORTADORAS CADASTRADAS</h1>
     <div>
       <h3>Transportadora <%= @shipping_company.brand_name %></h3>
       <dl>
@@ -33,8 +32,25 @@
   <% else %>
     <p>Não existem veículos registrados</p>
   <% end %>
-</section>
-
 <div>
   <%= link_to "Voltar", shipping_companies_path %>
 </div>
+</section>
+
+<section>
+  <h4>TABELA DE PREÇOS</h4>
+  <%= link_to "Cadastrar preço", new_shipping_company_price_path(@shipping_company) %>
+  
+    <% if @prices %>
+    <% @prices.each do |price| %>
+    <p>Entre <%= price.minimum_cubic_meter %> a <%= price.maximum_cubic_meter %> m³ e 
+    peso entre <%= price.minimum_weight %> e <%= price.maximum_weight %>
+    kgs o valor é de <%= price.price_km %> reais por km.</p>
+   <% end %>
+  
+  <div>
+    <%= link_to "Voltar", shipping_companies_path %>
+  </div>
+</section>
+<% end %>
+
