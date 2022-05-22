@@ -52,4 +52,17 @@ describe "User registers a new vehicle" do
     expect(page).to have_content "Ano de fabricação não pode ficar em branco"
     expect(page).to have_content "Capacidade não pode ficar em branco"
   end
+
+  it "and you need to be logged in" do
+    company = ShippingCompany.create!(corporate_name: "Expresso y LTDA",
+                                      brand_name: "Expresso y ",
+                                      registration_number: "73628193800013",
+                                      email_domain: "expressoy.com.br",
+                                      address: "Rua do Pedro, 3000",
+                                      city: "Novo Hamburgo",
+                                      state: "RS")
+
+    visit shipping_company_path(company)
+    expect(page).to have_content "Para continuar, efetue login ou registre-se."
+  end
 end
