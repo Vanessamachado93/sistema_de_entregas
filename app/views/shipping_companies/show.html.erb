@@ -3,7 +3,8 @@
     <div>
       <h3>Transportadora <%= @shipping_company.brand_name %></h3>
       <dl>
-        <dt> Razão Social:</dt><dd><%= @shipping_company.corporate_name %></dd>
+        <dt> Razão Social:</dt>
+        <dd><%= @shipping_company.corporate_name %></dd>
         <dt> CNPJ:</dt>
         <dd><%= @shipping_company.registration_number %></dd>
         <dt> Endereço:</dt>
@@ -22,7 +23,7 @@
       <p><%= vehicle.brand %> <%= vehicle.model %></p>
       <dl>
         <dt>Ano de fabricação:</dt>
-        <dd><%= vehicle.fabrication_year %></dd>
+        <dd><%= vehicle.manufact_year %></dd>
         <dt>Carga máxima:</dt>
         <dd><%= vehicle.capacity %>g</dd>
         <dt>Placa:</dt>

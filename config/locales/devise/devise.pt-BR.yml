@@ -2,8 +2,11 @@ pt-BR:
   activerecord:
     attributes:
       admin:
+        name: Nome
         email: E-mail
         password: Senha
+        sign_up: Crie sua conta
+        log_in: Entrar
       user:
         name: Nome
         confirmation_sent_at: Confirmação enviada em

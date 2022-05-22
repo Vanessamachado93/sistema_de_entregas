@@ -8,10 +8,16 @@
 </div>
 <h1><%= @vehicle.brand %> <%= @vehicle.code_model %></h1>
     <div>
-        <strong>Placa: <%= @vehicle.license_plate %></strong>
-        <strong>Marca: <%= @vehicle.brand %> </strong>
-        <strong>Ano de fabricação: </strong><%= @vehicle.manufact_year %>
-        <strong>Capacidade: </strong><%= @vehicle.capacity %>g 
+    <dl>
+       <dt><strong>Placa:<strong></dt>
+       <dd> <%= @vehicle.license_plate %></dd>
+        <dt><strong>Marca:<strong></dt>
+        <dd> <%= @vehicle.brand %></dd>  
+        <dt><strong>Ano de fabricação: </strong>
+        <dd><%= @vehicle.manufact_year %></dd>
+        <strong>Capacidade: </strong>
+        <dd><%= @vehicle.capacity %>g </dd>
+      </dl>
     </div>
   <div>
     <%= link_to "Voltar" %>
