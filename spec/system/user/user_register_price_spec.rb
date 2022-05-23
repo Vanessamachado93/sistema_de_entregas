@@ -8,7 +8,8 @@ describe "user view carrier price list" do
                                       email_domain: "papaleguas@expresso.com.br",
                                       address: "Rua Joseph, 230", state: "RS",
                                       city: "Canoas")
-    user = User.create!(email: "papaleguas@express.com.br", password: "123456", shipping_company: company)
+    user = User.create!(email: "papaleguas@express.com.br", password: "123456",
+                        shipping_company: company)
 
     Price.create!(minimum_weight: 0.10,
                   maximum_weight: 0.50,

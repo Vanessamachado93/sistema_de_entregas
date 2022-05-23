@@ -1,5 +1,4 @@
 <div>
-    <p>Verifique os erros abaixo:</p>
     <% if @shipping_company.errors.any? %>
       <% @shipping_company.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -20,5 +19,5 @@
       </dl>
     </div>
   <div>
-    <%= link_to "Voltar" %>
+    <%= link_to "Voltar", shipping_companies_path %>
 </div>
