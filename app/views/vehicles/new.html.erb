@@ -8,7 +8,7 @@
   <% end %>
 </ul>
 
-<%= form_with model: [:shipping_company, @vehicle] do |f| %>
+<%= form_with model: [@shipping_company, @vehicle] do |f| %>
   <div>
     <%= f.label :license_plate, "Placa" %>
     <%= f.text_field :license_plate %>
@@ -35,5 +35,4 @@
   <div>
   <%= link_to "Voltar", shipping_companies_path %>
   </div>
-
 <% end %>

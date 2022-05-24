@@ -1,9 +1,13 @@
 company = ShippingCompany.create!(corporate_name: "Transportes Rapidão LTDA",
-                                  brand_name: "R rapidão", registration_number: "34567987654567",
-                                  email_domain: "rapidao.com.br", address: "Av João Pedro, 400",
+                                  brand_name: "R rapidão",
+                                  registration_number: "34567987654567",
+                                  email_domain: "rapidao.com.br",
+                                  address: "Av João Pedro, 400",
                                   city: "Porto Alegre", state: "RS")
 
 User.create!(email: "rapidao@rapidao.com.br", password: "123456", shipping_company: company)
+
+Vehicle.create!(brand: "Ford", license_plate: "IXX7788", code_model: "Cargo", manufact_year: "2020", capacity: 50000, shipping_company: company)
 
 Admin.create!(email: "admin@sistemadefrete.com.br", password: "123456")
 

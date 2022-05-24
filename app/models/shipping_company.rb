@@ -5,5 +5,5 @@ class ShippingCompany < ApplicationRecord
 
   has_many :users
   has_many :vehicles
-  has_many :price
+  has_many :prices
 end

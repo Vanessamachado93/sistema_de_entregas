@@ -1,0 +1,17 @@
+<section>
+ <h1>Configuração de preços</h1>
+    <% if @prices.any? %>
+        <% @prices.each do |price| %>
+        <p>Entre <%= price.minimum_cubic_meter %> a <%= price.maximum_cubic_meter %> m³ e 
+        peso entre <%= price.minimum_weight %> e <%= price.maximum_weight %>
+        kgs o valor é de <%= price.price_km %> reais por km.</p>
+      <% end %>
+      <% else %>
+      <p>Não existem lista de preços</p>
+    <% end %>
+  <%= link_to "Cadastrar preço", new_shipping_company_price_path(@shipping_company) %>
+  
+  <div>
+    <%= link_to "Voltar", shipping_companies_path %>
+  </div>
+</section>

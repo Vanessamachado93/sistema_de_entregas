@@ -1,6 +1,10 @@
 class VehiclesController < ApplicationController
   before_action :set_shipping_company
 
+  def index
+    @vehicles = @shipping_company.vehicles.all
+  end
+
   def new
     @vehicle = @shipping_company.vehicles.new
   end

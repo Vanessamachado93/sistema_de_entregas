@@ -1,0 +1,9 @@
+<h1>Lista de veículos</h1>
+
+<% if @vehicles.any? %>
+  <% @vehicles.each do |vehicle| %>
+    <%= vehicle.code_model %>
+  <% end %>
+  <% else %>
+  <p> Não existem veículos registrados</p>
+<% end %>

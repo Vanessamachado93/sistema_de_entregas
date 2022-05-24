@@ -32,25 +32,17 @@
   <% else %>
     <p>Não existem veículos registrados</p>
   <% end %>
+
 <div>
   <%= link_to "Voltar", shipping_companies_path %>
 </div>
+<div>
+  <%= link_to "Configuração de preços", shipping_company_prices_path(@shipping_company) %>
+</div>
+<div>
+  <%= link_to "Veículos", shipping_company_vehicles_path(@shipping_company) %>
+</div>
 </section>
 
-<section>
-  <h4>TABELA DE PREÇOS</h4>
-  <%= link_to "Cadastrar preço", new_shipping_company_price_path(@shipping_company) %>
-  
-    <% if @prices %>
-    <% @prices.each do |price| %>
-    <p>Entre <%= price.minimum_cubic_meter %> a <%= price.maximum_cubic_meter %> m³ e 
-    peso entre <%= price.minimum_weight %> e <%= price.maximum_weight %>
-    kgs o valor é de <%= price.price_km %> reais por km.</p>
-   <% end %>
-  
-  <div>
-    <%= link_to "Voltar", shipping_companies_path %>
-  </div>
-</section>
-<% end %>
+
 

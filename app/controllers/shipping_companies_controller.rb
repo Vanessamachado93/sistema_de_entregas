@@ -8,7 +8,7 @@ class ShippingCompaniesController < ApplicationController
 
   def show
     @shipping_company = ShippingCompany.find(params[:id])
-    @prices = @shipping_company.price unless @shipping_company.price.empty?
+    @prices = @shipping_company.prices unless @shipping_company.prices.empty?
   end
 
   def new
