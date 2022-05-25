@@ -1,5 +1,5 @@
 <section>
- <h1>Configuração de preços</h1>
+ <h1><% link_to "Configuração de preços", new_shipping_company_path %></h1>
     <% if @prices.any? %>
         <% @prices.each do |price| %>
         <p>Entre <%= price.minimum_cubic_meter %> a <%= price.maximum_cubic_meter %> m³ e 
@@ -12,6 +12,6 @@
   <%= link_to "Cadastrar preço", new_shipping_company_price_path(@shipping_company) %>
   
   <div>
-    <%= link_to "Voltar", shipping_companies_path %>
+    <%= link_to "Voltar", shipping_company_path(@shipping_company) %>
   </div>
 </section>
