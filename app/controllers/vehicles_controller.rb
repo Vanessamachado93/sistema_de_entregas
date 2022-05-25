@@ -1,4 +1,5 @@
 class VehiclesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :show, :index]
   before_action :set_shipping_company
 
   def index

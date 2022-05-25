@@ -37,6 +37,7 @@ describe "User accesses shipping company page" do
     expect(page).to have_content "Cargo 1117"
     expect(page).to have_content "Cargo 1844"
     expect(page).not_to have_content "Cargo 1090"
+    expect(page).to have_link "Voltar", href: shipping_company_path(company)
   end
 
   it "and there are no registered vehicles" do
@@ -51,8 +52,21 @@ describe "User accesses shipping company page" do
                         password: "123456", shipping_company: company)
 
     login_as user, scope: :user
-    visit shipping_company_path(company)
+    visit shipping_company_vehicles_path(company)
 
     expect(page).to have_content "Não existem veículos registrados"
+  end
+
+  it "must be logged in to view vehicles list" do
+    company = ShippingCompany.create!(corporate_name: "Expresso H LTDA",
+                                      brand_name: "Expresso H ",
+                                      registration_number: "85748909876540",
+                                      email_domain: "express.com.br",
+                                      address: "Rua Mariana, 100",
+                                      city: "Porto Alegre",
+                                      state: "RS")
+    visit shipping_company_vehicles_path(company)
+
+    expect(page).to have_content "Para continuar, faça login ou registre-se."
   end
 end

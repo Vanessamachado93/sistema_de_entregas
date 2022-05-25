@@ -13,7 +13,9 @@ describe "User registers a new vehicle" do
                         shipping_company: company)
 
     login_as user, scope: :user
-    visit shipping_company_path(company)
+    visit root_path
+    click_on "Minha transportadora"
+    click_on "Veículos"
     click_on "Cadastrar veículo"
     fill_in "Placa", with: "ION1617"
     fill_in "Marca", with: "Ford"
@@ -39,8 +41,7 @@ describe "User registers a new vehicle" do
     user = User.create!(email: "empressoy@expressoy.com.br", password: "123456",
                         shipping_company: company)
     login_as user, scope: :user
-    visit shipping_company_path(company)
-    click_on "Cadastrar veículo"
+    visit new_shipping_company_vehicle_path(company)
     fill_in "Placa", with: ""
     fill_in "Marca", with: "Ford"
     fill_in "Modelo", with: ""

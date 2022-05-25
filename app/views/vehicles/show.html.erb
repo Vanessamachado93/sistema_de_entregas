@@ -1,11 +1,4 @@
-<h1>Veículo cadastrado</h1>
-<div>
-    <% if @shipping_company.errors.any? %>
-      <% @shipping_company.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    <% end %>
-</div>
+<h1>Detalhes do Veículo</h1>
 <h1><%= @vehicle.brand %> <%= @vehicle.code_model %></h1>
     <div>
     <dl>
@@ -20,28 +13,6 @@
       </dl>
     </div>
   <div>
-    <%= link_to "Voltar", shipping_companies_path %>
+    <%= link_to "Voltar", shipping_company_vehicles_path(@shipping_company) %>
 </div>
 
-<section>
-  <h4>VEÍCULOS REGISTRADOS</h4>
-  <%= link_to "Cadastrar veículo", new_shipping_company_vehicle_path(@shipping_company) %>
-  <% if @vehicles %>
-    <% @vehicles.each do |vehicle| %>
-      <p><%= vehicle.brand %> <%= vehicle.model %></p>
-      <dl>
-        <dt>Ano de fabricação:</dt>
-        <dd><%= vehicle.manufact_year %></dd>
-        <dt>Carga máxima:</dt>
-        <dd><%= vehicle.capacity %>g</dd>
-        <dt>Placa:</dt>
-        <dd><%= vehicle.license_plate %></dd>
-      </dl>
-    <% end %>
-  <% else %>
-    <p>Não existem veículos registrados</p>
-  <% end %>
-<div>
-  <%= link_to "Voltar", shipping_companies_path %>
-</div>
-</section>
