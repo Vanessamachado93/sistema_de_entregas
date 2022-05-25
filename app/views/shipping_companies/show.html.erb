@@ -12,36 +12,23 @@
         <dd><%= @shipping_company.city %> - <%= @shipping_company.state %></dd>
       </dl>
     </div>
+    <div>
+      <%= link_to "Voltar", shipping_companies_path if admin_signed_in? %>
+    </div>
 </section>
 
 <section>
-  <h4>VEÍCULOS REGISTRADOS</h4>
-  <%= link_to "Cadastrar veículo", new_shipping_company_vehicle_path(@shipping_company) %>
-  <% if @vehicles %>
-    <% @vehicles.each do |vehicle| %>
-      <p><%= vehicle.brand %> <%= vehicle.model %></p>
-      <dl>
-        <dt>Ano de fabricação:</dt>
-        <dd><%= vehicle.manufact_year %></dd>
-        <dt>Carga máxima:</dt>
-        <dd><%= vehicle.capacity %>g</dd>
-        <dt>Placa:</dt>
-        <dd><%= vehicle.license_plate %></dd>
-      </dl>
-    <% end %>
-  <% else %>
-    <p>Não existem veículos registrados</p>
+  <% if user_signed_in? %>
+    <div>
+      <%= link_to "Voltar", root_path %>
+    </div>
+    <div>
+      <%= link_to "Configuração de preços", shipping_company_prices_path(@shipping_company) %>
+    </div>
+    <div>
+      <%= link_to "Veículos", shipping_company_vehicles_path(@shipping_company) %>
+    </div>
   <% end %>
-
-<div>
-  <%= link_to "Voltar", shipping_companies_path %>
-</div>
-<div>
-  <%= link_to "Configuração de preços", shipping_company_prices_path(@shipping_company) %>
-</div>
-<div>
-  <%= link_to "Veículos", shipping_company_vehicles_path(@shipping_company) %>
-</div>
 </section>
 
 
