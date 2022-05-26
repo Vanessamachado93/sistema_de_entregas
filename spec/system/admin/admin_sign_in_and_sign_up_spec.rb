@@ -6,7 +6,7 @@ describe "Admin authenticates" do
     #Act
     Admin.create!(email: "email@example.com", password: "password")
     visit root_path
-    click_on "Area Administrativa"
+    click_on "Acessar como Administrador"
     within("form") do
       fill_in "E-mail", with: "email@example.com"
       fill_in "Senha", with: "password"
@@ -15,10 +15,10 @@ describe "Admin authenticates" do
     #Assert
     expect(page).to have_content "Login efetuado com sucesso"
     within("nav") do
-      expect(page).not_to have_link "Entrar"
+      expect(page).not_to have_link "Acessar como Usúario"
       expect(page).to have_link "Transportadoras"
       expect(page).not_to have_link "Minha transportadora"
-      expect(page).not_to have_link "Area Administrativa"
+      expect(page).not_to have_link "Acessar como Administrador"
       expect(page).to have_button "Sair"
       expect(page).to have_content "email@example.com"
     end
@@ -29,7 +29,7 @@ describe "Admin authenticates" do
     Admin.create!(email: "email@example.com", password: "password")
 
     visit root_path
-    click_on "Area Administrativa"
+    click_on "Acessar como Administrador"
     fill_in "E-mail", with: "email@example.com"
     fill_in "Senha", with: "password"
     within("form") do
@@ -39,7 +39,7 @@ describe "Admin authenticates" do
     click_on "Sair"
 
     expect(page).to have_content "Logout efetuado com sucesso"
-    expect(page).to have_link "Entrar"
+    expect(page).to have_link "Acessar como Usúario"
     expect(page).not_to have_button "Sair"
     expect(page).not_to have_content "emial@example.com"
   end

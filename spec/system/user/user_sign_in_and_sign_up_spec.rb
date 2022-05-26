@@ -11,7 +11,7 @@ describe "User authenticates" do
     User.create!(email: "email@example.com", password: "password", shipping_company: company)
     #Act
     visit root_path
-    click_on "Entrar"
+    click_on "Acessar como Usúario"
     within("form") do
       fill_in "E-mail", with: "email@example.com"
       fill_in "Senha", with: "password"
@@ -20,7 +20,7 @@ describe "User authenticates" do
     #Assert
     expect(page).to have_content "Login efetuado com sucesso"
     within("nav") do
-      expect(page).not_to have_link "Entrar"
+      expect(page).not_to have_link "Acessar como Usúario"
       expect(page).not_to have_link "Transportadoras"
       expect(page).not_to have_link "Area Administrativa"
       expect(page).to have_link "Minha transportadora"
@@ -38,7 +38,7 @@ describe "User authenticates" do
     User.create!(email: "email@example.com", password: "password", shipping_company: company)
 
     visit root_path
-    click_on "Entrar"
+    click_on "Acessar como Usúario"
     fill_in "E-mail", with: "email@example.com"
     fill_in "Senha", with: "password"
     within("form") do
@@ -48,7 +48,7 @@ describe "User authenticates" do
     click_on "Sair"
 
     expect(page).to have_content "Logout efetuado com sucesso"
-    expect(page).to have_link "Entrar"
+    expect(page).to have_link "Acessar como Usúario"
     expect(page).not_to have_button "Sair"
     expect(page).not_to have_content "emial@example.com"
   end

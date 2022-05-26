@@ -11,21 +11,21 @@
     <body>
       <header class="container mt-3 text-center">
         <h1>SISTEMA DE ENTREGAS</h1>
-          <nav class="nav text-center">
+          <nav class="text-center">
             <% if user_signed_in? %>
               <%= current_user.email %> 
               <strong><%= link_to "Minha transportadora", shipping_company_path(current_user.shipping_company_id) %></strong>
               <%= button_to "Sair", destroy_user_session_path, method: :delete %>
             <% else %>
-              <strong><%= link_to "Entrar", new_user_session_path unless admin_signed_in? %></strong>  | 
+              <strong><%= link_to "Acessar como Usúario", new_user_session_path unless admin_signed_in? %></strong>  
             <% end %>
 
             <% if !user_signed_in? && !admin_signed_in? %>
-            <p><strong><%= link_to "Area Administrativa", new_admin_session_path %></strong><p>  |
+            <p><strong><%= link_to "Acessar como Administrador", new_admin_session_path %></strong><p>  
             <% end %>
 
             <% if admin_signed_in? %>
-              <strong><%= link_to "Transportadoras", shipping_companies_path %></strong>  | 
+              <strong><%= link_to "Transportadoras", shipping_companies_path %></strong>  
               <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
               <%= current_admin.email %> 
             <% end %>

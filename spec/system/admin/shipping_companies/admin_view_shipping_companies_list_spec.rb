@@ -16,7 +16,7 @@ describe "Admin accesses main page of shipping companies" do
                             address: "Av do João, 100", city: "Porto Alegre",
                             state: "RS")
 
-    admin = Admin.create!(email: "expresso@expressoe.com.br", password: "123456")
+    admin = Admin.create!(email: "admin@sistemadefrete.com.br", password: "123456")
 
     login_as admin, scope: :admin
     visit root_path
@@ -30,7 +30,16 @@ describe "Admin accesses main page of shipping companies" do
     expect(page).to have_content "CNPJ: 34567987654567"
     expect(page).to have_content "Localidade: Porto Alegre - RS"
   end
-  xit "QUANDO NÃO TIVER NEHUMA TRANSPOTADORA"
+
+  it "when you don't have registered shipping company " do
+    admin = Admin.create!(email: "admin@sistemadefrete.com.br", password: "123456")
+
+    login_as admin, scope: :admin
+    visit root_path
+    click_on "Transportadoras"
+
+    expect(page).to have_content "Não existem transportadoras cadastradas"
+  end
 
   it "must be logged in to view shipping companies list" do
     visit shipping_companies_path
