@@ -2,13 +2,13 @@
 <h1><%= @vehicle.brand %> <%= @vehicle.code_model %></h1>
     <div>
     <dl>
-       <dt><strong>Placa:<strong></dt>
-       <dd> <%= @vehicle.license_plate %></dd>
-        <dt><strong>Marca:<strong></dt>
-        <dd> <%= @vehicle.brand %></dd>  
-        <dt><strong>Ano de fabricação: </strong>
+       <dt>Placa:</dt>
+       <dd><%= @vehicle.license_plate %></dd>
+        <dt>Marca:</dt>
+        <dd><%= @vehicle.brand %></dd>  
+        <dt>Ano de fabricação: </dt>
         <dd><%= @vehicle.manufact_year %></dd>
-        <strong>Capacidade: </strong>
+        <dt>Capacidade:</dt> 
         <dd><%= @vehicle.capacity %>g </dd>
       </dl>
     </div>
