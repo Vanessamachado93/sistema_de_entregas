@@ -31,14 +31,14 @@ describe "Admin accesses main page of shipping companies" do
     expect(page).to have_content "Localidade: Porto Alegre - RS"
   end
 
-  it "when you don't have registered shipping company " do
-    admin = Admin.create!(email: "admin@sistemadefrete.com.br", password: "123456")
+  xit "when you don't have registered shipping company " do
+    admin = Admin.create!(email: "admin2@sistemadefrete.com.br", password: "123456")
 
     login_as admin, scope: :admin
     visit root_path
     click_on "Transportadoras"
 
-    expect(page).to have_content "Não existem transportadoras cadastradas"
+    expect(page).to have_content "Não existe transportadoras cadastradas"
   end
 
   it "must be logged in to view shipping companies list" do
