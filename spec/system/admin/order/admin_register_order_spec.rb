@@ -38,8 +38,5 @@ describe "Admin registered work order" do
     click_on "Cadastrar"
 
     expect(page).to have_content "Ordem de serviço cadastrada com sucesso"
-    expect(page).to have_content ""
-    # expect(page).to have_content ""
-    # expect(page).to have_content ""
   end
 end

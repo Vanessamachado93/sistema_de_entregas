@@ -5,45 +5,44 @@
         <% end %>
     </ul>
 <% end %>
-
+<section class="container">
 <%= form_with model: [:shipping_company, @product] do |product| %>
-    <div> 
-        <%= product.label :sku %>
-        <%= product.number_field :sku %>
-    </div>
-    <div> 
-        <%= product.label :customer_name %>
-        <%= product.text_field :customer_name %>
-    </div>
-
-      <div> 
-        <%= product.label :customer_address %>
-        <%= product.text_field :customer_address %>
-    </div>
-
-      <div> 
-        <%= product.label :distance %>
-        <%= product.number_field :distance %>
-    </div>
-
-     <div> 
-        <%= product.label :weight %>
-        <%= product.number_field :weight %>
-    </div>
-
-    <div> 
-        <%= product.label :height %>
-        <%= product.number_field :height %>
-    </div>
-    <div> 
-        <%= product.label :width %>
-        <%= product.number_field :width %>
-    </div>
-    <div> 
-        <%= product.label :depth %>
-        <%= product.number_field :depth %>
-    </div>
+    <table class="table-center"> 
+        <tr>
+            <th><%= product.label :sku %></th>
+            <th><%= product.number_field :sku %><th>
+        </tr>
+        <tr> 
+            <th><%= product.label :customer_name %></th> 
+            <th><%= product.text_field :customer_name %></th> 
+        </tr>
+        <tr> 
+            <th><%= product.label :distance %></th>
+            <th><%= product.number_field :distance %></th>
+        </tr>
+        <tr> 
+        <th> <%= product.label :weight %></th>
+            <th><%= product.number_field :weight %></th>
+        </tr>
+        <tr> 
+            <th><%= product.label :height %></th>
+            <th><%= product.number_field :height %></th>
+        </tr>
+        <tr> 
+            <th><%= product.label :width %></th>
+            <th><%= product.number_field :width %></th>
+        </tr>
+        <tr> 
+            <th><%= product.label :depth %></th>
+            <th><%= product.number_field :depth %></th>
+        </tr>
+        <tr> 
+            <th><%= product.label :customer_address %></th>
+            <th><%= product.text_field :customer_address %></th>
+        </tr>
+    <table> 
      <div>
         <%= product.submit "Salvar" %>
     </div>
 <% end %>
+</section>
