@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_233550) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_27_174451) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -34,6 +34,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_233550) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shipping_company_id"], name: "index_prices_on_shipping_company_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "sku"
+    t.integer "distance"
+    t.decimal "weight"
+    t.decimal "height"
+    t.decimal "width"
+    t.decimal "depth"
+    t.string "customer_name"
+    t.string "customer_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shipping_companies", force: :cascade do |t|

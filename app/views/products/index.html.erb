@@ -1,0 +1,26 @@
+<h1>Produtos</h1>
+ <div>
+    <%= link_to "Cadastrar Produto", new_shipping_company_product_path %>
+  </div>
+              
+  <% if @product.any? %>
+      <% @product.each do |product| %>
+        <div>
+            <dl>
+              <dt>Código do Produto: </dt>
+              <dd><%= product.sku %></dd>
+
+              <dt>Nome do Cliente:</dt>
+              <dd><%= product.customer_name %></dd>
+
+              <dt> Endereço de entrega:</dt>
+              <dd><%= product.customer_address %></dd>
+            </dl>
+        </div>
+      <% end %>
+
+  <% else %>
+      <p>Não possuí produto na espera</p>
+ <% end %>
+
+

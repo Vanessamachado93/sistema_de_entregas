@@ -31,7 +31,7 @@ describe "Admin accesses main page of shipping companies" do
     expect(page).to have_content "Localidade: Porto Alegre - RS"
   end
 
-  xit "when you don't have registered shipping company " do
+  it "when you don't have registered shipping company " do
     admin = Admin.create!(email: "admin2@sistemadefrete.com.br", password: "123456")
 
     login_as admin, scope: :admin

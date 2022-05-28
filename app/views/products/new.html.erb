@@ -1,0 +1,49 @@
+<% if @product.errors.any? %>
+    <ul>
+        <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_with model: [:shipping_company, @product] do |product| %>
+    <div> 
+        <%= product.label :sku %>
+        <%= product.number_field :sku %>
+    </div>
+    <div> 
+        <%= product.label :customer_name %>
+        <%= product.text_field :customer_name %>
+    </div>
+
+      <div> 
+        <%= product.label :customer_address %>
+        <%= product.text_field :customer_address %>
+    </div>
+
+      <div> 
+        <%= product.label :distance %>
+        <%= product.number_field :distance %>
+    </div>
+
+     <div> 
+        <%= product.label :weight %>
+        <%= product.number_field :weight %>
+    </div>
+
+    <div> 
+        <%= product.label :height %>
+        <%= product.number_field :height %>
+    </div>
+    <div> 
+        <%= product.label :width %>
+        <%= product.number_field :width %>
+    </div>
+    <div> 
+        <%= product.label :depth %>
+        <%= product.number_field :depth %>
+    </div>
+     <div>
+        <%= product.submit "Salvar" %>
+    </div>
+<% end %>

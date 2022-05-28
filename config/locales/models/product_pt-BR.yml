@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      product: 'Produto'
+    attributes:
+      product:
+        sku: 'Código do Produto'
+        distance: 'Distância'
+        customer_address: 'Endereço de Entrega'
+        customer_name: 'Nome do Cliente'
+        weight: 'Peso'
+        height: 'Altura'
+        width: 'Largura'
+        depth: 'Profundidade'
