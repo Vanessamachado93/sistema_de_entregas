@@ -17,3 +17,12 @@ expressoa = ShippingCompany.create!(corporate_name: "Expresso B LTDA",
                                     city: "Porto Alegre", state: "RS")
 
 User.create!(email: "expressoB@expressoa.com.br", password: "234567", shipping_company: expressoa)
+
+Product.create!(customer_name: "Pedro", customer_address: "Av. Santos, 678 POA - RS",
+                distance: 100, weight: 1000, height: 10, width: 20, depth: 5, sku: "ABC123")
+
+Product.create!(customer_name: "João", customer_address: "Av. Mariana, 123 POA - RS",
+                distance: 100, weight: 1000, height: 10, width: 20, depth: 5, sku: "WER5678")
+
+Product.create!(customer_name: "Paulo", customer_address: "Av. Carlos, 345 POA - RS",
+                distance: 100, weight: 1000, height: 10, width: 20, depth: 5, sku: "POU785")

@@ -1,0 +1,15 @@
+<h1>Registrar Ordem de Serviço</h1>
+
+<%= form_with model: @order do |f| %>
+  <div>
+      <%= f.label :shipping_company_id, "Transportadora" %>
+      <%= f.collection_select :shipping_company_id, @shipping_companies, :id, :corporate_name %>
+  </div>
+  <div>
+      <%= f.label :product_id, "Produto" %>
+      <%= f.collection_select :product_id, @products, :id, :sku %>
+  </div>
+  <div>
+    <%= f.submit "Cadastrar" %>
+  </div>
+<% end %>
