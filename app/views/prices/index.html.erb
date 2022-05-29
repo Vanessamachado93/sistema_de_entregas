@@ -9,8 +9,9 @@
       <% else %>
       <p>Não existem lista de preços</p>
     <% end %>
-  <%= link_to "Cadastrar preço", new_shipping_company_price_path(@shipping_company) %>
-  
+  <div>
+    <%= link_to "Cadastrar preço", new_shipping_company_price_path(@shipping_company) %>
+  </div>
   <div>
     <%= link_to "Voltar", shipping_company_path(@shipping_company) %>
   </div>

@@ -1,4 +1,7 @@
 <h1>Lista de veículos</h1>
+   <div>
+  <%= link_to "Cadastrar veículo", new_shipping_company_vehicle_path(@shipping_company) %>
+  </div>
  <div>
     <% if @vehicles.any? %>
       <% @vehicles.each do |vehicle| %>
@@ -7,9 +10,6 @@
     <% else %>
        <p> Não existem veículos registrados</p>
     <% end %>
-  </div>
-   <div>
-  <%= link_to "Cadastrar veículo", new_shipping_company_vehicle_path(@shipping_company) %>
   </div>
     <div>
   <%= link_to "Voltar", shipping_company_path(@shipping_company) %>

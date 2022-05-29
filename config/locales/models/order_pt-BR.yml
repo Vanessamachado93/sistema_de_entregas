@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      order: 'Ordem de Serviço'
+    attributes:
+      order:
+        pending: 'Pendente'
+        accepted: 'Aceito'
+        rejected: 'Recusada'

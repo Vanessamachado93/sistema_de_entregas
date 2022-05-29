@@ -30,7 +30,7 @@ describe "User register delivery time setting" do
     expect(page).to have_content "Para entrega de 101 a 300 km, o prazo é 5 dias."
   end
 
-  xit "and there are no registered time delivery" do
+  it "and there are no registered time delivery" do
     company = ShippingCompany.create!(corporate_name: "Sul Expresso LTDA",
                                       brand_name: "Sul Expresso",
                                       registration_number: "85748905576545",
@@ -45,6 +45,6 @@ describe "User register delivery time setting" do
     visit shipping_company_time_deliveries_path(company)
 
     expect(page).to have_content "Não existe lista de prazos de entrega cadastrados."
-    #expect(page).to have_link "Voltar", href: shipping_company_path(@shipping_company)
+    expect(page).to have_link "Voltar", href: shipping_company_path(company)
   end
 end

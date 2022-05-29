@@ -1,0 +1,25 @@
+<h5><strong>PEDIDO:</strong> <%= @order.code %></h5>
+<tr>
+    <th>Status:</th>
+    <th><%= @order.class.human_attribute_name(@order.status) %></th>
+</tr><br>
+<tr>
+    <th>Transportadora:</th>
+    <th><%= @order.shipping_company.corporate_name %></th>
+</tr><br>
+<tr>
+    <th>Destinátario:</th>
+    <th><%= @order.product.customer_name %></th>
+</tr><br>
+<tr>
+    <th>Endereço de Entrega:</th>
+    <th><%= @order.product.customer_address %></th>
+</tr><br>
+<% if user_signed_in? %>
+  <div>
+    <%= button_to "Aceitar Ordem de Serviço" %>
+  </div><br>
+  <div>
+    <%= button_to "Recusar Ordem de Serviço" %>
+  </div>
+ <% end %>

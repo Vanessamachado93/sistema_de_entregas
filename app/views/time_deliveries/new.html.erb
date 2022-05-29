@@ -10,21 +10,21 @@
 
 <%= form_with model: [@shipping_company, @time_delivery] do |p| %>
   <div>
-  <%= p.label :min_distance, "Distancia mínima: " %>
-  <%= p.number_field :min_distance %>
-  </div>
-  <div>
-    <%= p.label :max_distance, "Distancia maxíma" %>
-    <%= p.number_field :max_distance %>
-  </div>
-  <div>
-    <%= p.label :time, "Prazo de entrega" %></strong></>
-    <%= p.number_field :time %>
-    </div>
-    <div>
-      <%= p.submit "Cadastrar" %>
-    </div>
-    <div>
+       <%= p.label :min_distance, "Distancia mínima: " %>
+       <%= p.number_field :min_distance %>
+     </div>
+     <div>
+        <%= p.label :max_distance, "Distancia maxíma" %>
+        <%= p.number_field :max_distance %>
+      </div>
+      <div>
+        <%= p.label :time, "Prazo de entrega" %></strong></>
+        <%= p.number_field :time %>
+      </div>
+      <div>
+          <%= p.submit "Cadastrar" %>
+      </div>
+      <div>
         <%= link_to "Voltar", shipping_company_time_deliveries_path(@shipping_company) %>
-    </div>
+      </div>
 <% end %>
