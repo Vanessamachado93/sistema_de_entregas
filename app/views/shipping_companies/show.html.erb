@@ -16,6 +16,8 @@
     <div>
       <h3>Transportadora <%= @shipping_company.brand_name %></h3>
       <dl>
+        <dt> Status:</dt>
+        <dd><%= @shipping_company.class.human_attribute_name(@shipping_company.status) %></dd>
         <dt> Razão Social:</dt>
         <dd><%= @shipping_company.corporate_name %></dd>
         <dt> CNPJ:</dt>

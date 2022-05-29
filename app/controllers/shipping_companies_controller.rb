@@ -19,7 +19,7 @@ class ShippingCompaniesController < ApplicationController
     @shipping_company = ShippingCompany.new(shipping_company_params)
 
     if @shipping_company.save
-      redirect_to @shipping_company, notice: "Transportadora cadastrada com sucesso."
+      redirect_to @shipping_company, notice: "Transportadora cadastrada com sucesso"
     else
       flash.now[:alert] = "Transportadora não cadastrada."
       render "new"

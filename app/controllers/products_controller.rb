@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   def index
-    #@products = @shipping_company.products
     @product = Product.all
   end
 
@@ -26,9 +25,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:weight, :height, :width, :depth, :sku,
                                     :distance, :customer_address, :customer_name)
-  end
-
-  def set_product
-    @product = Product.find(params[:id])
   end
 end

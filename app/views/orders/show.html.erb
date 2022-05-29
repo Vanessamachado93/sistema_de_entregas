@@ -15,6 +15,10 @@
     <th>Endereço de Entrega:</th>
     <th><%= @order.product.customer_address %></th>
 </tr><br>
+<tr>
+    <th>Data de emissão:</th>
+    <th><%= I18n.localize(@order.created_at) %></th>
+</tr><br>
 <% if user_signed_in? %>
   <div>
     <%= button_to "Aceitar Ordem de Serviço" %>
