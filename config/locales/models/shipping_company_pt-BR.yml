@@ -11,3 +11,5 @@ pt-BR:
         address: 'Endereço'
         city: 'Cidade'
         state: 'Estado'
+        active: 'Ativa'
+        inactive: 'Inativa'
