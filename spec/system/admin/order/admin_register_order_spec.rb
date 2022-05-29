@@ -44,5 +44,6 @@ describe "Admin registered work order" do
     expect(page).to have_content "Destinátario: Pedro Silva"
     expect(page).to have_content "Endereço de Entrega: Av. Santos, 890 POA - RS"
     expect(page).to have_content "Status: Pendente"
+    expect(page).to have_content "Data de emissão:"
   end
 end

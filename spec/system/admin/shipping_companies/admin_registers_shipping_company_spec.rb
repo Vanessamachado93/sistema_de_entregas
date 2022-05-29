@@ -18,7 +18,31 @@ describe "Admin registers shipping companies" do
     expect(page).to have_field "Cidade"
     expect(page).to have_field "Estado"
     expect(page).to have_content "Voltar"
+  end
+
+  it "Successfuly" do
+    admin = Admin.create!(email: "email@example.com", password: "password")
+
+    login_as admin, scope: :admin
+    visit root_path
+    click_on "Transportadoras"
+    click_on "Adicionar transportadora"
+    fill_in "Razão social", with: "Expresso A"
+    fill_in "Nome fantasia", with: "Expresso A LTDA"
+    fill_in "CNPJ", with: "90234567823454"
+    fill_in "Domínio de e-mail", with: "expresso@expressoa.com.br"
+    fill_in "Endereço", with: "Av do Transporte, 30"
+    fill_in "Cidade", with: "Canoas"
+    fill_in "Estado", with: "RS"
     click_on "Salvar"
+
+    expect(page).to have_content "Transportadora cadastrada com sucesso"
+    expect(page).to have_content "Razão Social: Expresso A"
+    expect(page).to have_content "CNPJ: 90234567823454"
+    expect(page).to have_content "Endereço: Av do Transporte, 30"
+    expect(page).to have_content "Localidade: Canoas - RS"
+    expect(page).to have_content "Status: Inativa"
+    expect(page).to have_link "Voltar", href: shipping_companies_path
   end
 
   it "with incomplete or invalid data" do
