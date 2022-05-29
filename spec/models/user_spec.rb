@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   describe "#valid?" do
     context "presence" do
       it "False when fields is empty" do
-        user = User.new(name: "", email: "", password: "", password_confirmation: "")
+        user = User.new(email: "", password: "", password_confirmation: "")
 
         user.valid?
 
