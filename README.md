@@ -7,7 +7,10 @@ Sobre o projeto:
 - Criar ordens de serviço, pesquisar preços e prazos praticados pelas
   transportadoras conforme ordem e vincular a uma transportadora;
 - Aceitar ordens de serviço atribuídas à transportadora e atualizar periodicamente situação da entrega;
-- Consultar qual status da entrega realizada.
+- Consultar qual status da entrega realizada.<br>
+  Obs:
+
+* O Admin pode acessar a aplicação com o login: "admin@sistemasdefrete.com.br" senha: "123456".
 
 Configuração base do projeto:
 
@@ -21,9 +24,11 @@ Configuração de testes:
 
 Como iniciar o projeto:
 
-1. Clone o projeto para sua máquina, e dentro da pasta do projeto, rode o comando bin/setup em seu terminal.
-2. Mude de diretório para a pasta principal do repositório.
-3. Você pode utilizar o comando rails s para ver a aplicação funcionando localmente no endereço http://localhost:3000.
+1. Clone o projeto para sua máquina <br>
+   git@github.com:Vanessamachado93/sistema_de_entregas.git,<br>
+2. Mude para a pasta principal do repositório, no terminal cd sistema_de_entregas, e dentro da pasta do projeto, rode o comando bin/setup em seu terminal, esse comando vai instalar as dependencias necessárias para rodar o projeto em sua máquina.
+3. Rode o arquivo seed com o comando rails db:seed.
+4. Você pode utilizar o comando rails s para ver a aplicação funcionando localmente no endereço http://localhost:3000.
 
 Como executar os testes:
 

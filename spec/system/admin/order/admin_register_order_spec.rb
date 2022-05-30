@@ -39,7 +39,7 @@ describe "Admin registered work order" do
     click_on "Cadastrar"
 
     expect(page).to have_content "Ordem de serviço cadastrada com sucesso"
-    expect(page).to have_content "PEDIDO: ABCDEFDH1234567"
+    expect(page).to have_content "ORDEM: ABCDEFDH1234567"
     expect(page).to have_content "Transportadora: Transportadora R rapidão LTDA"
     expect(page).to have_content "Destinátario: Pedro Silva"
     expect(page).to have_content "Endereço de Entrega: Av. Santos, 890 POA - RS"

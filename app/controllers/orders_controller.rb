@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  def index
+  end
+
   def new
     @order = Order.new
     @shipping_companies = ShippingCompany.all
@@ -16,9 +19,15 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def search
+    @code = params["query"]
+
+    @order = Order.find_by(code: params["query"])
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:shipping_company_id, :product_id)
+    params.require(:order).permit(:shipping_company_id, :product_id, :status, :code)
   end
 end

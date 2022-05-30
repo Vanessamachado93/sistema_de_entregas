@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     resources :time_deliveries, only: [:index, :new, :create]
     resources :products, only: [:index, :new, :create, :show]
   end
-  resources :orders, only: [:new, :create, :show]
+  resources :orders, only: [:new, :create, :show, :index] do
+    get "search", on: :collection
+  end
+  get "consultar-pedido", to: "orders#search"
 end

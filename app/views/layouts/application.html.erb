@@ -23,16 +23,24 @@
             <% if !user_signed_in? && !admin_signed_in? %>
             <p><strong><%= link_to "Acessar como Administrador", new_admin_session_path %></strong><p>  
             <% end %>
-
             <% if admin_signed_in? %>
-              <strong><%= link_to "Transportadoras", shipping_companies_path %></strong>  |
+              <strong><%= link_to "Minhas Ordens", orders_path %></strong>  |
               <strong><%= link_to "Registrar Ordem de Serviço", new_order_path %></strong>  |
+              <strong><%= link_to "Transportadoras", shipping_companies_path %></strong>  |
+              
               <strong><%= link_to "Produtos", shipping_company_products_path(:shipping_company_id) %></strong>   
               <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
               <%= current_admin.email %> 
             <% end %>
           </nav>
       <header >
+      <div class="text-center">
+          <%= form_with(url: search_orders_path, method: :get) do |f| %>
+            <strong><%= f.label :query, "RASTREAR ORDEM:" %></strong>
+            <%= f.text_field :query %>
+            <%= f.submit "BUSCAR" %>
+          <% end %>
+      </div>
      <main>
       <% if notice %>
           <div class="alert alert-success" role="alert"><%= notice %></div>

@@ -1,0 +1,21 @@
+<h1>Resultado da Busca por: <%= @code %></h1>
+
+<% if @order.present? %>
+<p> 1 ordem encontrado</p>
+<tr>
+    <th>ORDEM:</th>
+    <th><%= @order.code %></th>
+</tr><br>
+<tr>
+    <th>Destinátario: </th>
+    <th><%= @order.product.customer_name %></th>
+</tr><br>
+<tr>
+    <th>Endereço de Entrega:</th>
+    <th><%= @order.product.customer_address %></th>
+</tr><br>
+<tr>
+    <th>Transportadora:</th>
+    <th><%= @order.shipping_company.corporate_name %></th>
+</tr><br>
+<% end %>
