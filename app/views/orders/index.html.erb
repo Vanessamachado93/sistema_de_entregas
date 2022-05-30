@@ -1,0 +1,20 @@
+<h1>Lista de Ordens</h1>
+
+<% @orders.each do |order| %>
+    <tr>
+        <strong><th>ORDEM:</th></strong>
+        <th><%= order.code %></th>
+    </tr><br>
+    <tr>
+        <th>Destinátario: </th>
+        <th><%= order.product.customer_name %></th>
+    </tr><br>
+    <tr>
+        <th>Endereço de Entrega:</th>
+        <th><%= order.product.customer_address %></th>
+    </tr><br>
+    <tr>
+        <th>Transportadora:</th>
+        <th><%= order.shipping_company.corporate_name %></th>
+    </tr><br><br>
+<% end %>
