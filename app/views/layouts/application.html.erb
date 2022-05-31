@@ -22,7 +22,7 @@
 
             <% if user_signed_in? || admin_signed_in? %>
                 <strong><%= link_to "Lista de Ordens", orders_path %></strong>  |
-                <strong><%= link_to "ORDEM" %></strong>  |
+                <strong><%= link_to "ORDEM", orders_path(@order) %></strong>  |
              <% end %>
              <% if !user_signed_in? && !admin_signed_in? %>
                 <p><strong><%= link_to "Acessar como Administrador", new_admin_session_path %></strong><p>  
