@@ -15,15 +15,15 @@
     <th>Endereço de Entrega:</th>
     <th><%= @order.product.customer_address %></th>
 </tr><br>
-<tr>
-    <th>Data de emissão:</th>
-    <th><%= I18n.localize(@order.created_at) %></th>
-</tr><br>
-<% if user_signed_in? %>
-  <div>
-    <%= button_to "Aceitar Ordem de Serviço" %>
-  </div><br>
-  <div>
-    <%= button_to "Recusar Ordem de Serviço" %>
-  </div>
+     <th>Data de emissão:</th>
+    <th><%= I18n.localize(@order.created_at, format: :short) %></th>
+ </tr><br>
+
+ <% if user_signed_in? %>
+   <div>
+    <%= button_to "Aceitar Ordem de Serviço", edit_order_path, method: :get %>
+   </div><br>
+   <div>
+    <%= button_to "Recusar Ordem de Serviço", edit_order_path, method: :get %>
+   </div>
  <% end %>

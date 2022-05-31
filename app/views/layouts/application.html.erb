@@ -12,26 +12,29 @@
       <header class="container">
         <h1 class="text-center">SISTEMA DE ENTREGAS</h1>
           <nav class="text-center">
-            <% if user_signed_in? %>
-              <%= current_user.email %> 
-              <strong><%= link_to "Minha transportadora", shipping_company_path(current_user.shipping_company_id) %></strong>
-              <%= button_to "Sair", destroy_user_session_path, method: :delete %>
+            <% if user_signed_in? %><br>
+                <%= current_user.email %><br>
+                <%= button_to "Sair", destroy_user_session_path, method: :delete %>
+                <strong><%= link_to "Minha transportadora", shipping_company_path(current_user.shipping_company_id) %></strong><br>
             <% else %>
-              <strong><%= link_to "Acessar como Usúario", new_user_session_path unless admin_signed_in? %></strong>  
+               <strong><%= link_to "Acessar como Usúario", new_user_session_path unless admin_signed_in? %></strong>  
             <% end %>
 
-            <% if !user_signed_in? && !admin_signed_in? %>
-            <p><strong><%= link_to "Acessar como Administrador", new_admin_session_path %></strong><p>  
+            <% if user_signed_in? || admin_signed_in? %>
+                <strong><%= link_to "Lista de Ordens", orders_path %></strong>  |
+                <strong><%= link_to "ORDEM" %></strong>  |
+             <% end %>
+             <% if !user_signed_in? && !admin_signed_in? %>
+                <p><strong><%= link_to "Acessar como Administrador", new_admin_session_path %></strong><p>  
             <% end %>
+
             <% if admin_signed_in? %>
-              <strong><%= link_to "Lista de Ordens", orders_path %></strong>  |
-              <strong><%= link_to "Registrar Ordem de Serviço", new_order_path %></strong>  |
-              <strong><%= link_to "Transportadoras", shipping_companies_path %></strong>  |
-              
-              <strong><%= link_to "Produtos", shipping_company_products_path(:shipping_company_id) %></strong>   
-              <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
-              <%= current_admin.email %> 
-            <% end %>
+                <strong><%= link_to "Registrar Ordem de Serviço", new_order_path %></strong>  |
+                <strong><%= link_to "Transportadoras", shipping_companies_path %></strong>  |
+                <strong><%= link_to "Produtos", shipping_company_products_path(:shipping_company_id) %></strong>   
+                <%= button_to "Sair", destroy_admin_session_path, method: :delete %>
+                <%= current_admin.email %> 
+            <% end %>        
           </nav>
       <header >
       <div class="text-center">

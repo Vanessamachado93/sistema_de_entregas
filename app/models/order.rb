@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   belongs_to :product
   before_create :generate_code
 
-  enum status: { pending: 1, accepted: 2, rejected: 3 }, _default: :pending
+  enum status: { pending: 1, accepted: 5, rejected: 9 }, _default: :pending
 
   private
 
