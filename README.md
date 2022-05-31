@@ -10,7 +10,10 @@ Sobre o projeto:
 - Consultar qual status da entrega realizada.<br>
   Obs:
 
-* O Admin pode acessar a aplicação com o login: "admin@sistemasdefrete.com.br" senha: "123456".
+* O Admin pode acessar a aplicação com o login: "admin@sistemasdefrete.com.br"
+  senha: "123456".<br>
+* Acesso do Usúario
+  "rapidao@rapidao.com.br", senha: "123456"
 
 Configuração base do projeto:
 
