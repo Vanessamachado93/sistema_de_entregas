@@ -23,8 +23,8 @@ describe "Admin registered work order" do
     product = Product.create!(customer_name: "Pedro Silva", customer_address: "Av. Santos, 890 POA - RS",
                               distance: 100, weight: 1000, height: 10, width: 20, depth: 5, sku: "DFG456")
 
-    product_1 = Product.create!(customer_name: "Maria", customer_address: "Av. Andradas, 499 POA - RS",
-                                distance: 120, weight: 1023, height: 15, width: 25, depth: 8, sku: "ABC123")
+    product1 = Product.create!(customer_name: "Maria", customer_address: "Av. Andradas, 499 POA - RS",
+                               distance: 120, weight: 1023, height: 15, width: 25, depth: 8, sku: "ABC123")
 
     admin = Admin.create!(name: "Pedro", email: "admin@sistemadefrete.com.br", password: "123456")
 

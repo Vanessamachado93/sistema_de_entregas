@@ -19,9 +19,9 @@ describe "User see the Order" do
 
     login_as user, scope: :user
     visit shipping_companies_path
-    click_on "ORDEM"
+    click_on "Lista de Ordens"
 
-    expect(page).to have_content "ORDEM"
+    expect(page).to have_content "Lista de Ordens"
     expect(page).to have_content order.code
     expect(page).to have_content "Transportadora: Transportadora São Miguel LTDA"
   end
